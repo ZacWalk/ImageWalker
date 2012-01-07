@@ -1,0 +1,78 @@
+TD
+{
+    FONT-FAMILY: Verdana, Arial;
+    FONT-SIZE: smaller
+}
+A:link
+{
+    COLOR: #de8c00
+}
+A:visited
+{
+    COLOR: brown
+}
+A:active
+{
+    COLOR: orange
+}
+H1
+{
+    BACKGROUND-COLOR: moccasin;
+    BORDER-BOTTOM: #da4f0c thin solid;
+    BORDER-LEFT: #da4f0c thin solid;
+    BORDER-RIGHT: #da4f0c thin solid;
+    BORDER-TOP: #da4f0c thin solid;
+    FONT-SIZE: small;
+    MARGIN: 0px 0px 2px;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+H2
+{
+    BACKGROUND-COLOR: moccasin;
+    BORDER-BOTTOM: #da4f0c thin solid;
+    BORDER-LEFT: #da4f0c thin solid;
+    BORDER-RIGHT: #da4f0c thin solid;
+    BORDER-TOP: #da4f0c thin solid;
+    FONT-SIZE: x-small;
+    MARGIN: 0px 0px 2px;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+H3
+{
+    BACKGROUND-COLOR: moccasin;
+    BORDER-BOTTOM: #da4f0c thin solid;
+    BORDER-LEFT: #da4f0c thin solid;
+    BORDER-RIGHT: #da4f0c thin solid;
+    BORDER-TOP: #da4f0c thin solid;
+    FONT-SIZE: x-small;
+    MARGIN: 0px 0px 2px;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+H4
+{
+    BACKGROUND-COLOR: moccasin;
+    BORDER-BOTTOM: #da4f0c thin solid;
+    BORDER-LEFT: #da4f0c thin solid;
+    BORDER-RIGHT: #da4f0c thin solid;
+    BORDER-TOP: #da4f0c thin solid;
+    FONT-SIZE: x-small;
+    MARGIN: 0px 0px 2px;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+BODY
+{
+    FONT-FAMILY: Verdana, Arial;
+    FONT-SIZE: smaller
+}

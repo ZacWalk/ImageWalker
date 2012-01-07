@@ -1,0 +1,8 @@
+// TestLayoutView.h : interface of the CTestLayoutView class
+//
+/////////////////////////////////////////////////////////////////////////////
+
+#pragma once
+
+#include "Layout.h"
+

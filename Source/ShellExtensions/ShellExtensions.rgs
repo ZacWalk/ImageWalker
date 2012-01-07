@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'ShellExtensions'
+		'ShellExtensions.DLL'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}
