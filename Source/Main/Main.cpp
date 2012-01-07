@@ -8,8 +8,10 @@
 ///////////////////////////////////////////////////////////////////////
 
 
+
 #include "stdafx.h"
-#include <AtlGdiX.h>
+
+#pragma comment(lib, "turbojpeg-static")
 
 class CMainFrame;
 class State;

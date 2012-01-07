@@ -109,11 +109,11 @@ echo Server registration done!
       <AdditionalIncludeDirectories>C:\Development\WTL\include;..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>UNICOWS.LIB;htmlhelp.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>turbojpeg-static.lib;htmlhelp.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <Version>2.3.2</Version>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <DelayLoadDLLs>Wininet.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -125,6 +125,7 @@ echo Server registration done!
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -180,11 +181,11 @@ echo Server registration done!
       <AdditionalIncludeDirectories>C:\Development\WTL\include;..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>UNICOWS.LIB;htmlhelp.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>turbojpeg-static.lib;htmlhelp.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <Version>2.3.2</Version>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DelayLoadDLLs>Wininet.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
@@ -533,9 +534,6 @@ echo Server registration done!
     </ProjectReference>
     <ProjectReference Include="..\..\Libraries\FreeImage\Source\FreeImageLib\FreeImageLib.2008.vcxproj">
       <Project>{6121d045-784f-4ec1-8c3f-75ef7049fd98}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Libraries\FreeImage\Source\LibJPEG\LibJPEG.2008.vcxproj">
-      <Project>{e45ac07a-2f6e-42bd-947b-4a74e60c91a9}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\Libraries\FreeImage\Source\LibMNG\LibMNG.2008.vcxproj">
       <Project>{24fdadba-677e-4401-86bc-c2eb18f3e6f4}</Project>

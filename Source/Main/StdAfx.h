@@ -54,7 +54,7 @@ extern CServerAppModule _Module;
 #include <AtlSync.h>
 #include <AtlTheme.h>
 #include <AtlMem.h>
-
+#include <AtlGdiX.h>
 
 #define _USE_MATH_DEFINES  1
 #include <Math.h> 
