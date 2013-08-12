@@ -47,7 +47,6 @@ CMainFrame *g_pMainWin = 0;
 #include "MultiImageTransform.h"
 #include "DescriptionWindow.h"
 #include "SearchDlg.h"
-#include "Flickr.h"
 #include "TaskView.h"
 #include "SkinedStatusBarCtrl.h"
 #include "ImageWalkerCOM.h"

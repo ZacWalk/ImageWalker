@@ -146,7 +146,6 @@ struct FolderItemAttributes
 	bool bHasError;	
 	bool bIsLink;
 	bool bIsHidden;
-	bool bHasFlickrUrl;
 
 	int	nSubItemCount;
 	int nImage;
@@ -156,7 +155,7 @@ struct FolderItemAttributes
 
 	bool HasAttribute()
 	{
-		return bHasFlickrUrl || bHasError || bIsLink  || bIsHidden || bHasIPTC || bHasExif || bHasXmp || bHasICC || (nPageCount > 1);
+		return bHasError || bIsLink  || bIsHidden || bHasIPTC || bHasExif || bHasXmp || bHasICC || (nPageCount > 1);
 	}
 
 	static void AddMarker(CString &strMarkers, const CString &strMarker)
@@ -178,7 +177,6 @@ struct FolderItemAttributes
 			if (bHasXmp) AddMarker(strMarkers, _T("XMP"));
 			if (bHasExif) AddMarker(strMarkers, _T("EXIF"));
 			if (bHasICC) AddMarker(strMarkers, _T("ICC"));
-			if (bHasFlickrUrl) AddMarker(strMarkers, _T("Flickr"));
 
 			if (nPageCount > 1)
 			{
@@ -249,11 +247,6 @@ public:
 	{
 		CString strZip(_T(".zip"));
 		return strZip.CompareNoCase(IW::Path::FindExtension(GetFileName())) == 0;
-	}
-
-	bool HasFlickrUrl() const
-	{
-		return !_image.GetFlickrId().IsEmpty();
 	}
 
 	bool LoadJobBegin(FolderItemLoader &loader);
@@ -371,7 +364,6 @@ public:
 	static void selectItem(IW::FolderItem *pThumb);
 	static void selectInverse(IW::FolderItem *pThumb);
 	static void selectIfImage(IW::FolderItem *pThumb);
-	static void selectIfImageOnFlickr(IW::FolderItem *pThumb);
 	static void clearLoadedFlag(IW::FolderItem *pThumb);
 	static bool isSelected(const IW::FolderItem *pThumb);
 	static bool isNotSelected(const IW::FolderItem *pThumb);
@@ -718,7 +710,6 @@ public:
 	void SelectAll();
 	void SelectInverse();
 	void SelectImages();
-	void SelectImagesOnFlickr();
 	void SelectTag(const CString &strTag);
 	void GetSelectStatus(int &nCount, int &nImages, IW::FileSize &size) const;
 	int GetSelectCount() const;

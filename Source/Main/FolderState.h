@@ -368,11 +368,6 @@ public:
 		GetFolder()->SelectImages();
 		SelectionDelegates.Invoke();
 	}
-	void SelectImagesOnFlickr()
-	{
-		GetFolder()->SelectImagesOnFlickr();
-		SelectionDelegates.Invoke();
-	}
 	void SelectTag(const CString &strTag)
 	{
 		GetFolder()->SelectTag(strTag);

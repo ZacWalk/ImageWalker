@@ -803,12 +803,7 @@ public:
 		  _imageThumbnail.Free();
 		  if (!_image.IsEmpty()) _imageThumbnail = IW::CreatePreview(GetRenderImage(), CSize(160, 160));
 	  }
-
-	  bool HasFlickrUrl() const
-	  {
-		  return !_image.GetFlickrId().IsEmpty();
-	  }
-
+	  
 	  void SetImageWithHistory(IW::Image &image, const CString &strAction)
 	  {
 		  IW::Image imageOld = GetImage();
@@ -1013,11 +1008,6 @@ public:
 		  strDescription.Replace(g_szLF, g_szCR);
 		  strDescription.Replace(g_szCR, g_szCRLF);
 		  return strDescription;
-	  }
-
-	  CString GetFlickrPhotoId() const
-	  {
-		  return _image.GetFlickrId();
 	  }
 
 	  CString GetTaken() const

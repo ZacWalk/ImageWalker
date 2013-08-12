@@ -102,7 +102,6 @@ public:
 		AddCommand(ID_EDIT_PASTE, new  CommandEditPaste<ThisClass>(this));
 		AddCommand(ID_EDIT_SELECT_ALL, new  CommandEditSelectAll(_state));
 		AddCommand(ID_EDIT_SELECTALLIMAGES, new  CommandEditSelectImages(_state));		
-		AddCommand(ID_EDIT_SELECTIMAGESONFLICKR, new  CommandEditSelectImagesOnFlickr(_state));		
 		AddCommand(ID_FILE_ACQUIRE, new  CommandFileAcquire<ThisClass>(this));		
 		AddCommand(ID_FILE_ACQUIRE_NATIVE, new  CommandFileAcquireNative<ThisClass>(this));	
 		AddCommand(ID_FILE_OPEN, new  CommandFileOpen<ThisClass>(this));
@@ -128,7 +127,6 @@ public:
 		AddCommand(ID_VIEW_PINIMAGE, new  CommandViewPin<ThisClass>(this));		
 		AddCommand(ID_VIEW_REFRESHX, new  CommandViewRefresh<ThisClass>(this));			
 
-		AddCommand(ID_VIEW_FLICKR, new CommandShowFlickrPicOfInterest(_state));		
 		AddCommand(ID_VIEW_DESCRIPTION, new CommandShowTask(_state, App.Options.ShowDescription));
 		AddCommand(ID_VIEW_ADVANCEDIMAGE, new CommandShowTask(_state, App.Options.ShowAdvancedImageDetails));
 
@@ -146,10 +144,6 @@ public:
 		AddCommand(ID_TAG_AUTOSELECT, new CommandTagAutoSelect<ThisClass>(this));
 		AddCommand(ID_EDIT_ROTATELEFT, new CommandRotateSelectedLeft<ThisClass>(this));
 		AddCommand(ID_EDIT_ROTATERIGHT,	new CommandRotateSelectedRight<ThisClass>(this));
-		AddCommand(ID_EDIT_UPLOADTOFLICKR, new CommandUploadSelectedToFlickr(_state));
-		AddCommand(ID_FLICKR_CHANGEUSER, new CommandChangeFlickrUser(_state));
-		AddCommand(ID_FLICKR_NEXT, new  CommandFlickrNext(_state));
-		AddCommand(ID_FLICKR_DOWNLOAD, new  CommandFlickrDownload(_state));
 
         AddCommand(ID_OPTIONS_SHOWDESCRIPTIONSINDETAIL, new CommandOption<ThisClass>(this, App.Options.ShowDescriptions));
         AddCommand(ID_OPTIONS_SHOWHIDDENFILES, new CommandOption<ThisClass>(this, App.Options.m_bShowHidden));

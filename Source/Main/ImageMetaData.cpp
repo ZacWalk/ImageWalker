@@ -25,7 +25,6 @@ void ImageMetaData::Apply(IW::Image &image)
 	image.SetTitle(GetTitle());
 	image.SetTags(GetTags());
 	image.SetDescription(GetDescription());
-	image.SetFlickrId(GetFlickrId());
 	image.SetObjectName(GetObjectName());
 }
 
@@ -209,19 +208,6 @@ CString ImageMetaData::GetOriginalTR() const
 	return str;
 }
 
-CString ImageMetaData::GetFlickrId() const 
-{
-	CString str;
-	if (!_xmp.Read(imagewalker, _T("flickrid"), str))
-	{
-		_iptc.Read(2, 219, str);
-	}
-	return str;
-}
-
-
-
-
 
 void ImageMetaData::SetTitle(const CString &str) 
 {
@@ -331,8 +317,3 @@ void ImageMetaData::SetOriginalTR(const CString &str)
 	_iptc.Write(2, 103, str);
 }
 
-void ImageMetaData::SetFlickrId(const CString &str)  
-{
-	_xmp.Write(imagewalker, _T("flickrid"), str);
-	_iptc.Write(2, 219, str);
-}

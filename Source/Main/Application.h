@@ -82,7 +82,6 @@ public:
 	bool _bDontHideCursor;
 	bool _bExifAutoRotate;
 
-	bool ShowFlickrPicOfInterest;
 	bool ShowFolders;
 	bool ShowDescription;
 	bool ShowAdvancedImageDetails;
@@ -111,14 +110,6 @@ public:
 	DWORD m_dwXPelsPerMeter;
 	DWORD m_dwYPelsPerMeter;
 
-	struct tagFlickr
-	{
-		CString NSid;
-		CString UserName;
-		CString FullName;
-		CString Token;
-	} 
-	Flickr;
 
 	struct tagWeb
 	{		

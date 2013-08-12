@@ -5,7 +5,6 @@
 #include "FolderState.h"
 #include "PluginState.h"
 #include "ShellMenu.h"
-#include "FlickrState.h"
 
 #define ID_HISTORY_BACK_FIRST              5000
 #define ID_HISTORY_BACK_LAST               5099
@@ -298,8 +297,7 @@ public:
 	State(TCoupling *pCoupling) :	  
 		Image(Plugins, pCoupling, pCoupling),
 		Folder(pCoupling),
-		Favourite(pCoupling),
-		Flickr(*this)
+		Favourite(pCoupling)
 	{
 	}
 
@@ -328,5 +326,4 @@ public:
 	FavouriteState Favourite;
 	IW::ThumbnailCache Cache;
 	PluginState Plugins;
-	FlickrState Flickr;
 };

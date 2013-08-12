@@ -11,7 +11,6 @@ namespace IW
 		out.SetTitle(imageIn.GetTitle());
 		out.SetTags(imageIn.GetTags());
 		out.SetDescription(imageIn.GetDescription());
-		out.SetFlickrId(imageIn.GetFlickrId());
 		out.SetObjectName(imageIn.GetObjectName());
 		out.SetStatistics(imageIn.GetStatistics());
 		out.SetLoaderName(imageIn.GetLoaderName());
@@ -178,11 +177,6 @@ namespace IW
 		{
 			_image.SetDescription(str);
 		}
-
-		void SetFlickrId(const CString &str)
-		{
-			_image.SetFlickrId(str);
-		}
 		
 		void SetObjectName(const CString &str)
 		{
@@ -210,7 +204,6 @@ namespace IW
 			_image.SetTitle(meta.GetTitle());
 			_image.SetTags(meta.GetTags());
 			_image.SetDescription(meta.GetDescription());
-			_image.SetFlickrId(meta.GetFlickrId());
 			_image.SetObjectName(meta.GetObjectName());
 
 			AddBlob(iptc);
@@ -596,7 +589,6 @@ namespace IW
 			_imageStream.SetTitle(_strTitle);
 			_imageStream.SetTags(_strTags);
 			_imageStream.SetDescription(_strDescription);
-			_imageStream.SetFlickrId(meta.GetFlickrId());
 			_imageStream.SetObjectName(meta.GetObjectName());
 
 			AddBlob(iptc);

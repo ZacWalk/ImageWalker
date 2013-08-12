@@ -116,7 +116,6 @@
 #define IDS_HOME                        184
 #define IDD_TEST                        184
 #define IDS_ID_SUBTITLE                 185
-#define IDD_FLICKRUPLOAD                185
 #define IDS_FRAME_NO                    186
 #define IDS_ID_TITLE                    187
 #define IDB_CAPTION_BUTTONS             187
@@ -126,7 +125,6 @@
 #define IDB_SKIN_CAPTION                189
 #define IDS_INVALID_CACHE_FILE_WITH_OS  190
 #define IDS_INVALID_FILE                191
-#define IDD_FLICKR_CREATESET            191
 #define IDS_INVALID_INPUT               192
 #define IDD_PROGRESS_ADVANCED           192
 #define IDS_FRAME_BUTTON                193
@@ -684,7 +682,6 @@
 #define IDC_OR                          1127
 #define IDC_ORIGINAL_TR                 1128
 #define IDC_OVERWRITE                   1129
-#define IDC_FLICKRID                    1129
 #define IDC_PREVIEW                     1130
 #define IDC_PERCENT                     1131
 #define IDC_PROGRESS                    1132
@@ -820,9 +817,7 @@
 #define IDD_HTML_INDEX                  2013
 #define IDD_PRINT_LAYOUT                2014
 #define IDD_PRINT_HEADER                2015
-#define IDD_FLICKRUPLOAD_MULTI          2016
 #define IDD_ADDCOPYRIGHT                2017
-#define IDD_FLICKR_DOWNLOADBYID         2019
 #define IDD_HTML_ADVANCED               2020
 #define IDD_DESCRIPTION_XMP             2022
 #define IDD_RENAME_SINGLE               2023
@@ -991,7 +986,6 @@
 #define IDS_SENT                        40249
 #define IDS_DAYS                        40250
 #define IDS_MONTHS                      40251
-#define ID_EDIT_UPLOADTOFLICKR          40252
 #define ID_THUMBNAILS_THUMBNAIL         40255
 #define ID_THUMBNAILS_DETAIL            40256
 #define ID_THUMBNAILS_MATRIX            40300
@@ -1002,7 +996,6 @@
 #define ID_ARRANGEICONS_MODIFIED        40306
 #define ID_ARRANGEICONS_MORE            40307
 #define ID_SLIDESHOW_DELAYBETWEENIMAGES_2SECOND 40312
-#define ID_VIEW_FLICKR                  40313
 #define ID_TOOLS_CONVERTIMAGES          40317
 #define ID_TOOLS_TAG                    40318
 #define ID_TOOLS_BATCHPROCESS           40320
@@ -1013,8 +1006,6 @@
 #define ID_VIEW_ADDRESS                 40330
 #define ID_VIEW_SEARCHADVANCED          40331
 #define ID_TEST                         40333
-#define ID_IMAGE_OPENINFLICKR           40334
-#define ID_IMAGE_UPLOADTOFLICKR         40335
 #define ID_FILE_OPENCONTAINING          40336
 #define IDC_SEARCH_CURRENT              40337
 #define ID_SEARCH_MYPICTURES            40339
@@ -1033,19 +1024,12 @@
 #define ID_EDIT_ROTATELEFT              40357
 #define ID_EDIT_ROTATERIGHT             40359
 #define IDS_ROTATING                    40361
-#define ID_FLICKR_CHANGEUSER            40362
-#define IDS_IPTC_FLICKRID               40362
-#define ID_FLICKR_CREATEPHOTOSET        40363
 #define ID_SCALE_FILL                   40366
 #define ID_TAG_REMOVE                   40371
 #define ID_FILE_ADDCOPYRIGHT            40375
-#define ID_EDIT_SELECTIMAGESONFLICKR    40377
 #define ID_ARRANGEICONS_DATETAKEN       40378
-#define ID_FLICKR_DOWNLOADIMAGE         40383
 #define ID_FILE_OPEN_WITH               40384
 #define ID_HELP_REGISTRATIONWEBPAGE     40385
-#define ID_FLICKR_NEXT                  40386
-#define ID_FLICKR_DOWNLOAD              40388
 #define ID_VIEW_ADVANCEDIMAGE           40402
 #define ID_SCALE_TOGGLE                 40418
 #define ID_SEARCH_IMAGESINSUBFOLDERS    40419

@@ -9,7 +9,6 @@ class CImageLoad;
 #include "Dialogs.h"
 #include "Items.h"
 #include "ImageLoaderThread.h"
-#include "Flickr.h"
 #include "LoadAny.h"
 #include "FolderCtrl.h"  
 #include "ImageDataObject.h"
@@ -32,7 +31,6 @@ public:
 
 	FrameImageCtrl<CImageCtrl> _frameControls;
 	FrameImageInfo _frameImageInfo;
-	FrameFlickr _frameFlickr;
 
 	FrameImageWalker _frameImageWalker;
 
@@ -41,12 +39,10 @@ public:
 		_state(state),		
 		_frameImageInfo(&_frameParent, state),
 		_frameControls(&_frameParent, this, state),
-		_frameFlickr(&_frameParent, state),
 		_frameImageWalker(&_frameParent)
 	{
 		_frames.push_back(&_frameImageWalker);
 		_frames.push_back(&_frameImageInfo);
-		_frames.push_back(&_frameFlickr);
 		_frames.push_back(&_frameControls);		
 	}
 
@@ -233,7 +229,6 @@ public:
 		_frameControls.SetVisible(CanShowControls());
 		_frameImageInfo.SetVisible(CanShowImageInfo());
 		_frameImageWalker.SetVisible(CanShowHelp());
-		_frameFlickr.SetVisible(CanShowFlickr());
 
 		Accept(FrameVisitorActivate(m_hWnd));
 
@@ -251,14 +246,7 @@ public:
 	{
 		return _state.Image.IsImageShown();
 	}
-
-	bool CanShowFlickr() const
-	{
-		return App.IsOnline() && 
-			App.Options.ShowFlickrPicOfInterest &&
-			!_state.Image.IsImageEditMode();
-	}
-
+	
 	bool CanShowHelp() const
 	{
 		return !_state.Image.IsImageShown();

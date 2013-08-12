@@ -55,7 +55,6 @@ IptcSpec g_iptc_tags[] = {
 	{ 130	, IDS_IPTC_IMAGETYPE },
 	{ 131	, IDS_IPTC_IMAGEORIENTATION },
 	{ 135	, IDS_IPTC_LANGUAGEIDENTIFIER },
-	{ 219	, IDS_IPTC_FLICKRID },
 	{ -1 , -1 }
 };
 

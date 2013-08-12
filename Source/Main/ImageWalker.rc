@@ -773,68 +773,6 @@ BEGIN
     LTEXT           "Output Folder:",IDC_STATIC,5,28,186,9
 END
 
-IDD_FLICKRUPLOAD DIALOGEX 0, 0, 330, 338
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Flickr Upload"
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
-BEGIN
-    GROUPBOX        "Your Flickr details",IDC_STATIC,7,7,248,46
-    LTEXT           "Static",IDC_ACCOUNT,14,19,235,27
-    GROUPBOX        "Image details",IDC_STATIC,7,57,248,143
-    LTEXT           "File Title/Headline:",IDC_STATIC,14,70,235,8
-    EDITTEXT        IDC_HEADLINE,14,81,235,14,ES_AUTOHSCROLL
-    LTEXT           "Tags/Keywords: (Use ';' to separate)",IDC_STATIC,14,100,241,8
-    EDITTEXT        IDC_TAGS,14,113,235,14,ES_AUTOHSCROLL
-    LTEXT           "Description/Caption/Abstract:",IDC_STATIC,14,131,235,8
-    EDITTEXT        IDC_CAPTION,14,145,235,48,ES_MULTILINE | ES_WANTRETURN | WS_VSCROLL
-    GROUPBOX        "Advanced Settings",IDC_STATIC,7,206,248,125
-    LTEXT           "Add these photos to a set:",IDC_STATIC,14,222,118,11
-    COMBOBOX        IDC_PHOTOSET,14,235,118,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Privacy",1023,159,222,51,11
-    CONTROL         "Private",IDC_PRIVATE,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,158,239,39,10
-    CONTROL         "Friends can see",IDC_FRIENDS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,170,250,66,10
-    CONTROL         "Family can see",IDC_FAMILY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,170,264,63,10
-    CONTROL         "Public",IDC_PUBLIC,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,158,276,34,10
-    CONTROL         "Resize the longest side to:",IDC_RESIZE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,294,235,10
-    COMBOBOX        IDC_RESIZE_LENGTH,25,311,224,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    DEFPUSHBUTTON   "OK",IDOK,262,7,61,14
-    PUSHBUTTON      "Cancel",IDCANCEL,262,24,61,14
-END
-
-IDD_FLICKR_CREATESET DIALOGEX 0, 0, 228, 92
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Create Set"
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
-BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,171,7,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,171,24,50,14
-    EDITTEXT        1054,55,33,112,14,ES_AUTOHSCROLL
-    RTEXT           "Title:",-1,8,36,44,8
-    RTEXT           "Description:",-1,7,55,44,8
-    EDITTEXT        1053,55,52,112,33,ES_MULTILINE | ES_AUTOHSCROLL
-    LTEXT           "To create a new set please give it a title and an optional description.",-1,11,10,140,18
-END
-
-IDD_FLICKRUPLOAD_MULTI DIALOGEX 0, 0, 330, 190
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Flickr Upload"
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
-BEGIN
-    GROUPBOX        "Your Flickr details",-1,7,7,248,46
-    LTEXT           "Static",IDC_ACCOUNT,14,19,235,27
-    GROUPBOX        "Settings",-1,7,58,248,125
-    LTEXT           "Add these photos to a set:",-1,14,74,118,11
-    COMBOBOX        IDC_PHOTOSET,14,87,118,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Privacy",1023,159,74,51,11
-    CONTROL         "Private",IDC_PRIVATE,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,158,91,39,10
-    CONTROL         "Friends can see",IDC_FRIENDS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,170,102,66,10
-    CONTROL         "Family can see",IDC_FAMILY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,170,116,63,10
-    CONTROL         "Public",IDC_PUBLIC,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,158,128,34,10
-    CONTROL         "Resize the longest side to:",IDC_RESIZE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,146,235,10
-    COMBOBOX        IDC_RESIZE_LENGTH,25,163,224,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    DEFPUSHBUTTON   "OK",IDOK,262,7,61,14
-    PUSHBUTTON      "Cancel",IDCANCEL,262,24,61,14
-END
 
 IDD_ADDCOPYRIGHT DIALOGEX 0, 0, 262, 98
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
@@ -849,18 +787,6 @@ BEGIN
     EDITTEXT        IDC_COPYRIGHT,7,80,189,12,ES_AUTOHSCROLL
     DEFPUSHBUTTON   "OK",IDOK,205,7,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,205,24,50,14
-END
-
-IDD_FLICKR_DOWNLOADBYID DIALOGEX 0, 0, 203, 59
-STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Download Flickr image by Id"
-FONT 8, "MS Sans Serif", 0, 0, 0x0
-BEGIN
-    LTEXT           "&Image Id:",-1,7,7,56,8
-    EDITTEXT        IDC_IMAGEID,7,20,189,12,ES_AUTOHSCROLL
-    DEFPUSHBUTTON   "&Open",IDC_OPEN,36,39,50,14
-    DEFPUSHBUTTON   "&Download",IDOK,91,39,50,14
-    PUSHBUTTON      "&Cancel",IDCANCEL,146,39,50,14
 END
 
 IDD_HTML_ADVANCED DIALOGEX 0, 0, 253, 130
@@ -968,8 +894,6 @@ BEGIN
     EDITTEXT        IDC_COUNTRY_NAME,63,230,189,12,ES_AUTOHSCROLL
     LTEXT           "Transmission Ref:",IDC_STATIC,5,248,58,8
     EDITTEXT        IDC_ORIGINAL_TR,63,244,189,12,ES_AUTOHSCROLL
-    LTEXT           "Flickr Id:",IDC_STATIC,5,262,58,8
-    EDITTEXT        IDC_FLICKRID,63,258,189,12,ES_AUTOHSCROLL
 END
 
 IDD_DESCRIPTION_IPTC DIALOGEX 0, 0, 256, 279
@@ -1051,75 +975,6 @@ BEGIN
     0
 END
 
-IDD_FLICKRUPLOAD DLGINIT
-BEGIN
-    IDC_PHOTOSET, 0x403, 44, 0
-0x3038, 0x2030, 0x6970, 0x6578, 0x736c, 0x2820, 0x7573, 0x7469, 0x6261, 
-0x656c, 0x6620, 0x726f, 0x6f20, 0x2d6e, 0x6373, 0x6572, 0x6e65, 0x7620, 
-0x6569, 0x6977, 0x676e, 0x0029, 
-    IDC_PHOTOSET, 0x403, 40, 0
-0x3231, 0x3038, 0x7020, 0x7869, 0x6c65, 0x2073, 0x7328, 0x6975, 0x6174, 
-0x6c62, 0x2065, 0x6f66, 0x2072, 0x6d73, 0x6c61, 0x206c, 0x7270, 0x6e69, 
-0x7374, 0x0029, 
-    IDC_PHOTOSET, 0x403, 41, 0
-0x3631, 0x3030, 0x7020, 0x7869, 0x6c65, 0x2073, 0x7328, 0x6975, 0x6174, 
-0x6c62, 0x2065, 0x6f66, 0x2072, 0x616c, 0x6772, 0x7265, 0x7020, 0x6972, 
-0x746e, 0x2973, "\000" 
-    IDC_PHOTOSET, 0x403, 33, 0
-0x3032, 0x3834, 0x7020, 0x7869, 0x6c65, 0x2073, 0x6228, 0x7365, 0x2074, 
-0x6f66, 0x2072, 0x7261, 0x6863, 0x7669, 0x6e69, 0x2967, "\000" 
-    IDC_RESIZE_LENGTH, 0x403, 44, 0
-0x3038, 0x2030, 0x6970, 0x6578, 0x736c, 0x2820, 0x7573, 0x7469, 0x6261, 
-0x656c, 0x6620, 0x726f, 0x6f20, 0x2d6e, 0x6373, 0x6572, 0x6e65, 0x7620, 
-0x6569, 0x6977, 0x676e, 0x0029, 
-    IDC_RESIZE_LENGTH, 0x403, 40, 0
-0x3231, 0x3038, 0x7020, 0x7869, 0x6c65, 0x2073, 0x7328, 0x6975, 0x6174, 
-0x6c62, 0x2065, 0x6f66, 0x2072, 0x6d73, 0x6c61, 0x206c, 0x7270, 0x6e69, 
-0x7374, 0x0029, 
-    IDC_RESIZE_LENGTH, 0x403, 41, 0
-0x3631, 0x3030, 0x7020, 0x7869, 0x6c65, 0x2073, 0x7328, 0x6975, 0x6174, 
-0x6c62, 0x2065, 0x6f66, 0x2072, 0x616c, 0x6772, 0x7265, 0x7020, 0x6972, 
-0x746e, 0x2973, "\000" 
-    IDC_RESIZE_LENGTH, 0x403, 33, 0
-0x3032, 0x3834, 0x7020, 0x7869, 0x6c65, 0x2073, 0x6228, 0x7365, 0x2074, 
-0x6f66, 0x2072, 0x7261, 0x6863, 0x7669, 0x6e69, 0x2967, "\000" 
-    0
-END
-
-IDD_FLICKRUPLOAD_MULTI DLGINIT
-BEGIN
-    IDC_PHOTOSET, 0x403, 44, 0
-0x3038, 0x2030, 0x6970, 0x6578, 0x736c, 0x2820, 0x7573, 0x7469, 0x6261, 
-0x656c, 0x6620, 0x726f, 0x6f20, 0x2d6e, 0x6373, 0x6572, 0x6e65, 0x7620, 
-0x6569, 0x6977, 0x676e, 0x0029, 
-    IDC_PHOTOSET, 0x403, 40, 0
-0x3231, 0x3038, 0x7020, 0x7869, 0x6c65, 0x2073, 0x7328, 0x6975, 0x6174, 
-0x6c62, 0x2065, 0x6f66, 0x2072, 0x6d73, 0x6c61, 0x206c, 0x7270, 0x6e69, 
-0x7374, 0x0029, 
-    IDC_PHOTOSET, 0x403, 41, 0
-0x3631, 0x3030, 0x7020, 0x7869, 0x6c65, 0x2073, 0x7328, 0x6975, 0x6174, 
-0x6c62, 0x2065, 0x6f66, 0x2072, 0x616c, 0x6772, 0x7265, 0x7020, 0x6972, 
-0x746e, 0x2973, "\000" 
-    IDC_PHOTOSET, 0x403, 33, 0
-0x3032, 0x3834, 0x7020, 0x7869, 0x6c65, 0x2073, 0x6228, 0x7365, 0x2074, 
-0x6f66, 0x2072, 0x7261, 0x6863, 0x7669, 0x6e69, 0x2967, "\000" 
-    IDC_RESIZE_LENGTH, 0x403, 44, 0
-0x3038, 0x2030, 0x6970, 0x6578, 0x736c, 0x2820, 0x7573, 0x7469, 0x6261, 
-0x656c, 0x6620, 0x726f, 0x6f20, 0x2d6e, 0x6373, 0x6572, 0x6e65, 0x7620, 
-0x6569, 0x6977, 0x676e, 0x0029, 
-    IDC_RESIZE_LENGTH, 0x403, 40, 0
-0x3231, 0x3038, 0x7020, 0x7869, 0x6c65, 0x2073, 0x7328, 0x6975, 0x6174, 
-0x6c62, 0x2065, 0x6f66, 0x2072, 0x6d73, 0x6c61, 0x206c, 0x7270, 0x6e69, 
-0x7374, 0x0029, 
-    IDC_RESIZE_LENGTH, 0x403, 41, 0
-0x3631, 0x3030, 0x7020, 0x7869, 0x6c65, 0x2073, 0x7328, 0x6975, 0x6174, 
-0x6c62, 0x2065, 0x6f66, 0x2072, 0x616c, 0x6772, 0x7265, 0x7020, 0x6972, 
-0x746e, 0x2973, "\000" 
-    IDC_RESIZE_LENGTH, 0x403, 33, 0
-0x3032, 0x3834, 0x7020, 0x7869, 0x6c65, 0x2073, 0x6228, 0x7365, 0x2074, 
-0x6f66, 0x2072, 0x7261, 0x6863, 0x7669, 0x6e69, 0x2967, "\000" 
-    0
-END
 
 IDD_EMAIL DLGINIT
 BEGIN
@@ -1494,13 +1349,6 @@ BEGIN
         BOTTOMMARGIN, 92
     END
 
-    IDD_FLICKR_DOWNLOADBYID, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 196
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 53
-    END
 
     IDD_HTML_ADVANCED, DIALOG
     BEGIN
@@ -1686,7 +1534,6 @@ BEGIN
     "I",            ID_EDIT_SELECTALLIMAGES, VIRTKEY, CONTROL, NOINVERT
     "L",            ID_FILTER_ROTATELEFT,   VIRTKEY, NOINVERT
     "L",            ID_EDIT_ROTATELEFT,     VIRTKEY, SHIFT, NOINVERT
-    "L",            ID_VIEW_FLICKR,         VIRTKEY, SHIFT, CONTROL, NOINVERT
     "N",            ID_BROWSE_NEWFOLDER,    VIRTKEY, CONTROL, NOINVERT
     "N",            ID_VIEW_NORMAL,         VIRTKEY, SHIFT, CONTROL, NOINVERT
     "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
@@ -1804,8 +1651,6 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "Copy Image",                  ID_IMAGE_COPY
         MENUITEM "Set As Wallpaper...",         ID_IMAGE_SETASWAL
-        MENUITEM "Open in Flickr...",           ID_IMAGE_OPENINFLICKR
-        MENUITEM "Upload to Flickr...",         ID_IMAGE_UPLOADTOFLICKR
         MENUITEM SEPARATOR
         MENUITEM "Options...",                  ID_TOOLS_OPTIONS
     END
@@ -1861,7 +1706,6 @@ BEGIN
             MENUITEM "Select All",                  ID_EDIT_SELECT_ALL
             MENUITEM "Invert Selection",            ID_EDIT_INVERTSELECTION
             MENUITEM "Select All Images",           ID_EDIT_SELECTALLIMAGES
-            MENUITEM "Select images on Flickr",     ID_EDIT_SELECTIMAGESONFLICKR
         END
         MENUITEM SEPARATOR
         MENUITEM "Delete",                      ID_EDIT_DELETE
@@ -1883,7 +1727,6 @@ BEGIN
         BEGIN
             MENUITEM "Show Description",            ID_VIEW_DESCRIPTION
             MENUITEM "Advanced Image Details",      ID_VIEW_ADVANCEDIMAGE
-            MENUITEM "Flickr picture of interest",  ID_VIEW_FLICKR
             MENUITEM "Folders",                     ID_VIEW_FOLDERS
         END
         MENUITEM SEPARATOR
@@ -1951,11 +1794,6 @@ BEGIN
             MENUITEM "30 Seconds",                  ID_SLIDESHOW_DELAYBETWEENIMAGES_30SECONDS
         END
         MENUITEM SEPARATOR
-        POPUP "Flickr"
-        BEGIN
-            MENUITEM "Open in Flickr...",           ID_IMAGE_OPENINFLICKR
-            MENUITEM "Upload to Flickr...",         ID_IMAGE_UPLOADTOFLICKR
-        END
         MENUITEM "Unload Image",                ID_IMAGE_UNLOAD
         MENUITEM "Edit Description...",         ID_IMAGE_EDITDESCRIPTION
         MENUITEM SEPARATOR
@@ -2021,16 +1859,6 @@ BEGIN
         MENUITEM "Add Copyright/Credits",       ID_FILE_ADDCOPYRIGHT
         MENUITEM "Convert Images",              ID_TOOLS_CONVERTIMAGES
         MENUITEM "Email Images",                ID_IMAGE_EMAIL
-        POPUP "Flickr"
-        BEGIN
-            MENUITEM "Change User...",              ID_FLICKR_CHANGEUSER
-            MENUITEM "Create Photo Set",            ID_FLICKR_CREATEPHOTOSET
-            MENUITEM "Upload selected to Flickr...", ID_EDIT_UPLOADTOFLICKR
-            MENUITEM "Download Image by ID...",     ID_FLICKR_DOWNLOADIMAGE
-            MENUITEM SEPARATOR
-            MENUITEM "Next image of Interest",      ID_FLICKR_NEXT
-            MENUITEM "Download image of Interest",  ID_FLICKR_DOWNLOAD
-        END
         MENUITEM "Loss-Less Jpeg",              ID_TOOLS_LOSSLESS
         MENUITEM "Rename",                      ID_BROWSE_RENAME
         MENUITEM "Resize Images",               ID_TOOLS_RESIZE
@@ -2070,9 +1898,6 @@ BEGIN
         MENUITEM "Previous Image",              ID_SLIDESHOW_PREVIOUSIMAGE
         MENUITEM "Next Image",                  ID_SLIDESHOW_NEXTIMAGE
         MENUITEM SEPARATOR
-        MENUITEM "Upload to Flickr...",         ID_IMAGE_UPLOADTOFLICKR
-        MENUITEM "Open in Flickr...",           ID_IMAGE_OPENINFLICKR
-        MENUITEM SEPARATOR
         POPUP "Scale"
         BEGIN
             MENUITEM "Scale to Fit",                ID_SCALE_FIT
@@ -2108,7 +1933,6 @@ BEGIN
         BEGIN
             MENUITEM "Address",                     ID_VIEW_ADDRESS
             MENUITEM "Description",                 ID_VIEW_DESCRIPTION
-            MENUITEM "Flickr picture of interest",  ID_VIEW_FLICKR
             MENUITEM "Folders",                     ID_VIEW_FOLDERS
         END
         MENUITEM "Unload Image",                ID_IMAGE_UNLOAD
@@ -2284,7 +2108,6 @@ BEGIN
         MENUITEM "Rotate selected images left", ID_EDIT_ROTATELEFT
         MENUITEM "Rotate selected images right", ID_EDIT_ROTATERIGHT
         MENUITEM "Send to Email Recipient...",  ID_IMAGE_EMAIL
-        MENUITEM "Upload selected to Flickr...", ID_EDIT_UPLOADTOFLICKR
         MENUITEM "Zip Files...",                ID_FILE_ZIP
         MENUITEM SEPARATOR
         MENUITEM "Delete",                      ID_EDIT_DELETE
@@ -2318,7 +2141,6 @@ BEGIN
             MENUITEM "Select All",                  ID_EDIT_SELECT_ALL
             MENUITEM "Invert Selection",            ID_EDIT_INVERTSELECTION
             MENUITEM "Select All Images",           ID_EDIT_SELECTALLIMAGES
-            MENUITEM "Select images on Flickr",     ID_EDIT_SELECTIMAGESONFLICKR
         END
         POPUP "Thumbnails"
         BEGIN
@@ -2834,7 +2656,6 @@ BEGIN
     IDS_SENT                "Sent"
     IDS_DAYS                "Days"
     IDS_MONTHS              "Months"
-    ID_EDIT_UPLOADTOFLICKR  "Upload selected to Flickr\nUpload selected to Flickr"
     ID_THUMBNAILS_THUMBNAIL "Thumbnail View\nThumbnail View"
 END
 
@@ -3321,10 +3142,6 @@ BEGIN
     IDS_SYMBOL_FILE         "Symbol File"
 END
 
-STRINGTABLE 
-BEGIN
-    ID_VIEW_FLICKR          "Flickr picture of interest\nFlickr picture of interest"
-END
 
 STRINGTABLE 
 BEGIN
@@ -3332,7 +3149,6 @@ BEGIN
     ID_FILE_PRINT_OPTIONS   "Print options\nPrint Options"
     ID_VIEW_ADDRESS         "Show Address\nShow Address"
     ID_VIEW_SEARCHADVANCED  "Advanced Search\nAdvanced Search"
-    ID_IMAGE_UPLOADTOFLICKR "Upload selected images to Flickr\nUpload selected images to Flickr"
 END
 
 STRINGTABLE 
@@ -3356,7 +3172,6 @@ BEGIN
     ID_EDIT_ROTATELEFT      "Rotate selected images left\nRotate selected images left"
     ID_EDIT_ROTATERIGHT     "Rotate selected images right\nRotate selected images right"
     IDS_ROTATING            "Rotating"
-    IDS_IPTC_FLICKRID       "FlickrId"
     ID_SCALE_FILL           "e Images To fill window\nScale Images To Fill window"
 END
 
@@ -3369,10 +3184,7 @@ STRINGTABLE
 BEGIN
     ID_TAG_REMOVE           "Remove tag from selected images\nRemove tag from selected images"
     ID_FILE_ADDCOPYRIGHT    "Add Copyright/Credits\nAdd Copyright/Credits"
-    ID_EDIT_SELECTIMAGESONFLICKR 
-                            "Select images on Flickr\nSelect images on Flickr"
     ID_ARRANGEICONS_DATETAKEN "Arrange by Date Taken\nArrange by Date Taken"
-    ID_FLICKR_DOWNLOADIMAGE "Donload image\nDownload image"
 END
 
 STRINGTABLE 

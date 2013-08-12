@@ -39,9 +39,6 @@
     <ClCompile Include="Email.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Flickr.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Folder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -313,12 +310,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FilterScalePage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Flickr.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FlickrState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FolderCtrl.h">

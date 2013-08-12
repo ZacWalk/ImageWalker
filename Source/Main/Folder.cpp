@@ -53,18 +53,6 @@ void IW::FolderItem::selectIfImage(IW::FolderItem *pThumb)
 	}
 }
 
-void IW::FolderItem::selectIfImageOnFlickr(IW::FolderItem *pThumb)
-{
-	if (pThumb->HasFlickrUrl())
-	{
-		pThumb->_uFlags |= THUMB_SELECTED;
-	}
-	else
-	{
-		pThumb->_uFlags &= ~THUMB_SELECTED;
-	}
-}
-
 void IW::FolderItem::clearLoadedFlag(IW::FolderItem *pThumb)
 {
 	pThumb->_uFlags &= ~THUMB_LOADED;
@@ -611,7 +599,6 @@ void IW::FolderItem::GetAttributes(IW::FolderItemAttributes &attributes, bool bG
 	attributes.nPageCount = _image.GetPageCount();
 	attributes.bIsLink = (_ulAttribs & SFGAO_LINK) != 0;
 	attributes.bIsHidden = (_ulAttribs & SFGAO_GHOSTED) != 0;
-	attributes.bHasFlickrUrl = HasFlickrUrl();
 
 	if (bGetImage)
 	{
@@ -2011,12 +1998,6 @@ void IW::Folder::SelectImages()
 	UpdateSelectedItems();
 }
 
-void IW::Folder::SelectImagesOnFlickr()
-{
-	IW::CAutoLockCS lock(_cs);
-	std::for_each(_thumbs.begin(), _thumbs.end(), FolderItem::selectIfImageOnFlickr);
-	UpdateSelectedItems();
-}
 
 void IW::Folder::SelectTag(const CString &strTag)
 {

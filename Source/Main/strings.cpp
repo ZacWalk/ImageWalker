@@ -218,7 +218,6 @@ LPCTSTR g_szZip = _T("Zip");
 LPCTSTR g_szShrink = _T("Shrink");
 LPCTSTR g_szEmail = _T("Email");
 LPCTSTR g_szWallPaper = _T("WallPaper");
-LPCTSTR g_szFlickr = _T("Flickr");
 LPCTSTR g_szDefaultImageId = _T("DefaultImageId");
 LPCTSTR g_szAddCopyright = _T("AddCopyright");
 LPCTSTR g_szCredit = _T("Credit");

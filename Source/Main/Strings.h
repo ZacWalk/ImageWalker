@@ -219,7 +219,6 @@ extern LPCTSTR g_szEmail;
 extern LPCTSTR g_szZip;
 extern LPCTSTR g_szShrink;
 extern LPCTSTR g_szWallPaper;
-extern LPCTSTR g_szFlickr;
 extern LPCTSTR g_szDefaultImageId;
 extern LPCTSTR g_szAddCopyright;
 extern LPCTSTR g_szCredit;

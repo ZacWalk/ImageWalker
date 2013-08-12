@@ -77,7 +77,6 @@ namespace IW
 				Title,
 				Tags,
 				Description,
-				FlickrId,
 				ObjectName,
 			};
 		};

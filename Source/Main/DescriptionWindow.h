@@ -235,7 +235,6 @@ public:
 		COMMAND_HANDLER(IDC_PROVENCE_STATE, EN_CHANGE, OnChange)
 		COMMAND_HANDLER(IDC_COUNTRY_NAME, EN_CHANGE, OnChange)
 		COMMAND_HANDLER(IDC_ORIGINAL_TR, EN_CHANGE, OnChange)
-		COMMAND_HANDLER(IDC_FLICKRID, EN_CHANGE, OnChange)
 
 		COMMAND_ID_HANDLER(IDC_TODAY, OnToday)
 
@@ -280,7 +279,6 @@ public:
 		SetDlgItemText(IDC_PROVENCE_STATE, metaData.GetProvenceState());
 		SetDlgItemText(IDC_COUNTRY_NAME, metaData.GetCountryName());
 		SetDlgItemText(IDC_ORIGINAL_TR, metaData.GetOriginalTR());
-		SetDlgItemText(IDC_FLICKRID, metaData.GetFlickrId());
 
 		_bDirty = false;
 	}
@@ -311,7 +309,6 @@ public:
 			metaData.SetProvenceState(GetDlgItemText(IDC_PROVENCE_STATE));
 			metaData.SetCountryName(GetDlgItemText(IDC_COUNTRY_NAME));
 			metaData.SetOriginalTR(GetDlgItemText(IDC_ORIGINAL_TR));
-			metaData.SetFlickrId(GetDlgItemText(IDC_FLICKRID));
 		}
 	}	
 };

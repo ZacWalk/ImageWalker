@@ -940,7 +940,7 @@ bool Page::CopyExtraInfo(const Page &other)
 CString Image::ToString() const
 {
 	CString str;
-	str.Format(_T("PageCount = %d, MetaDataCount = %d, PelsPerMeter = %d*%d, Title=%s, Tags=%s, Description=%s, Flickr=%s, ObjectName=%s, Statistics = %s, LoaderName = %s, Flags = %d, OriginalImageSize = %d*%d, OriginalBpp = %d"),
+	str.Format(_T("PageCount = %d, MetaDataCount = %d, PelsPerMeter = %d*%d, Title=%s, Tags=%s, Description=%s, ObjectName=%s, Statistics = %s, LoaderName = %s, Flags = %d, OriginalImageSize = %d*%d, OriginalBpp = %d"),
 		Pages.size(),
 		Blobs.size(),
 		_settings.XPelsPerMeter,
@@ -948,7 +948,6 @@ CString Image::ToString() const
 		_strTitle,
 		_strTags,
 		_strDescription,
-		_strFlickrId,
 		_strObjectName,
 		_strStatistics,
 		_strLoaderName,
@@ -1079,7 +1078,6 @@ bool Image::Compare(const Image &image, bool bCompareMetaData) const
 	if (_strTitle != image._strTitle ||
 		_strTags != image._strTags ||
 		_strDescription != image._strDescription ||
-		_strFlickrId != image._strFlickrId ||
 		_strObjectName != image._strObjectName ||
 		_strStatistics != image._strStatistics ||
 		_strLoaderName != image._strLoaderName ||
@@ -1134,7 +1132,6 @@ Image Image::Clone() const
 	other._strTitle = _strTitle;
 	other._strTags = _strTags;
 	other._strDescription = _strDescription;
-	other._strFlickrId = _strFlickrId;
 	other._strObjectName = _strObjectName;
 	other._strStatistics = _strStatistics;
 	other._strLoaderName = _strLoaderName;
@@ -1154,7 +1151,6 @@ void Image::Copy(const Image &other)
 	_strTitle = other._strTitle;
 	_strTags = other._strTags;
 	_strDescription = other._strDescription;
-	_strFlickrId = other._strFlickrId;
 	_strObjectName = other._strObjectName;
 	_strStatistics = other._strStatistics;
 	_strLoaderName = other._strLoaderName;

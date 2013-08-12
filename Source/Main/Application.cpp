@@ -35,7 +35,6 @@ static LPCTSTR g_szBatchOneForAll = _T("BatchOneForAll");
 static LPCTSTR g_szShowDescriptions = _T("ShowDescriptions");
 static LPCTSTR g_szZoomThumbnails = _T("ZoomThumbnails");
 static LPCTSTR g_szImageWalkerSupportEmailAddress = _T("support@imagewalker.com");
-static LPCTSTR g_szShowFlickrPicOfInterest = _T("ShowFlickrPicOfInterest");
 static LPCTSTR g_szMood = _T("Mood");
 static LPCTSTR g_szDescriptionPage = _T("DescriptionPage");
 static LPCTSTR g_szWebOptionsPage = _T("WebOptionsPage");
@@ -612,7 +611,6 @@ COptions::COptions()
 	m_nResolutionSelection = 0;
 	m_dwXPelsPerMeter = 2834;
 	m_dwYPelsPerMeter = 2834;
-	ShowFlickrPicOfInterest = true;
 	ShowFolders = false;
 	ShowDescription = true;
 	ShowAdvancedImageDetails = true;
@@ -683,7 +681,6 @@ void COptions::Read(const CString &strValueName, const IW::IPropertyArchive *pAr
 		pArchive->Read(g_szResolution, m_nResolutionSelection);
 		pArchive->Read(g_szXPelsPerMeter, m_dwXPelsPerMeter);
 		pArchive->Read(g_szYPelsPerMeter, m_dwYPelsPerMeter);
-		pArchive->Read(g_szShowFlickrPicOfInterest, ShowFlickrPicOfInterest);
 		pArchive->Read(g_szShowFolders, ShowFolders);
 		pArchive->Read(g_szShowDescription, ShowDescription);
 		pArchive->Read(g_szShowAdvancedImageDetails, ShowAdvancedImageDetails);
@@ -694,16 +691,6 @@ void COptions::Read(const CString &strValueName, const IW::IPropertyArchive *pAr
 		pArchive->Read(g_szBlackSkin, BlackSkin);	
 		pArchive->Read(g_szSearchByDate, SearchByDate);		
 		pArchive->Read(g_szAutoSelectTaggedImages, AutoSelectTaggedImages);	
-
-		if (pArchive->StartSection(g_szFlickr))
-		{
-			pArchive->Read(g_szNSid, Flickr.NSid);
-			pArchive->Read(g_szUserName, Flickr.UserName);
-			pArchive->Read(g_szFullName, Flickr.FullName);
-			pArchive->Read(g_szToken, Flickr.Token);
-
-			pArchive->EndSection();
-		}
 
 		if (pArchive->StartSection(g_szWeb))
 		{
@@ -759,7 +746,6 @@ void COptions::Write(const CString &strValueName, IW::IPropertyArchive *pArchive
 		pArchive->Write(g_szResolution, m_nResolutionSelection);
 		pArchive->Write(g_szXPelsPerMeter, m_dwXPelsPerMeter);
 		pArchive->Write(g_szYPelsPerMeter, m_dwYPelsPerMeter);
-		pArchive->Write(g_szShowFlickrPicOfInterest, ShowFlickrPicOfInterest);
 		pArchive->Write(g_szShowFolders, ShowFolders);
 		pArchive->Write(g_szShowDescription, ShowDescription);
 		pArchive->Write(g_szShowAdvancedImageDetails, ShowAdvancedImageDetails);
@@ -771,16 +757,6 @@ void COptions::Write(const CString &strValueName, IW::IPropertyArchive *pArchive
 		pArchive->Write(g_szSearchByDate, SearchByDate);		
 		pArchive->Write(g_szAutoSelectTaggedImages, AutoSelectTaggedImages);
 		pArchive->Write(g_szRegistrationSettings, _nRegistrationSettings);
-		
-		if (pArchive->StartSection(g_szFlickr))
-		{
-			pArchive->Write(g_szNSid, Flickr.NSid);
-			pArchive->Write(g_szUserName, Flickr.UserName);
-			pArchive->Write(g_szFullName, Flickr.FullName);
-			pArchive->Write(g_szToken, Flickr.Token);
-
-			pArchive->EndSection();
-		}
 
 		if (pArchive->StartSection(g_szWeb))
 		{

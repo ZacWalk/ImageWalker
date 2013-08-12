@@ -219,7 +219,6 @@ echo Server registration done!
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="DisplayDialog.cpp" />
     <ClCompile Include="Email.cpp" />
-    <ClCompile Include="Flickr.cpp" />
     <ClCompile Include="Folder.cpp" />
     <ClCompile Include="ImageColor.cpp" />
     <ClCompile Include="ImageConversion.cpp" />
@@ -369,8 +368,6 @@ echo Server registration done!
     <ClInclude Include="Exif.h" />
     <ClInclude Include="FileTime.h" />
     <ClInclude Include="FilterScalePage.h" />
-    <ClInclude Include="Flickr.h" />
-    <ClInclude Include="FlickrState.h" />
     <ClInclude Include="FolderCtrl.h" />
     <ClInclude Include="FolderFrames.h" />
     <ClInclude Include="FolderLayout.h" />

@@ -1019,7 +1019,6 @@ namespace IW
 		CString _strTitle;
 		CString _strTags;
 		CString _strDescription;
-		CString _strFlickrId;
 		CString _strObjectName;
 		CString _strStatistics;
 		CString _strLoaderName;
@@ -1221,9 +1220,6 @@ namespace IW
 		CString GetDescription() const { return _strDescription; };
 		void SetDescription(const CString &str) { _strDescription = str; };
 
-		CString GetFlickrId() const { return _strFlickrId; };
-		void SetFlickrId(const CString &str) { _strFlickrId = str; };
-		
 		CString GetObjectName() const { return _strObjectName; };
 		void SetObjectName(const CString &str) { _strObjectName = str; };
 
@@ -1245,7 +1241,6 @@ namespace IW
 			archive(IW::Serialize::NamedType::Title, _strTitle);
 			archive(IW::Serialize::NamedType::Tags, _strTags);
 			archive(IW::Serialize::NamedType::Description, _strDescription);
-			archive(IW::Serialize::NamedType::FlickrId, _strFlickrId);
 			archive(IW::Serialize::NamedType::ObjectName, _strObjectName);
 			archive(IW::Serialize::NamedType::Statistics, _strStatistics);
 			archive(IW::Serialize::NamedType::LoaderName, _strLoaderName);

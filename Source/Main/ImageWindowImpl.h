@@ -34,9 +34,6 @@ public:
 		pT->AddCommand(ID_IMAGE_COPY, new  CommandCopy<T>(pT));	
 		pT->AddCommand(ID_IMAGE_EDITDESCRIPTION, new  CommandEditDescription<T>(pT));	
 		pT->AddCommand(ID_IMAGE_SETASWAL, new  CommandSetAsWallPaper<T>(pT));	
-		pT->AddCommand(ID_IMAGE_OPENINFLICKR, new  CommandOpenInFlickr(pT->_state));
-		pT->AddCommand(ID_FLICKR_DOWNLOADIMAGE, new  CommandDownloadFromFlickr(pT->_state));		
-		pT->AddCommand(ID_IMAGE_UPLOADTOFLICKR, new  CommandUploadToFlickr(pT->_state));		
 		pT->AddCommand(ID_IMAGE_UNLOAD, new  CommandUnload<T>(pT));
 		pT->AddCommand(ID_SCALE_100, new  CommandScale<T>(pT, _T("100%")));		
 		pT->AddCommand(ID_SCALE_200, new  CommandScale<T>(pT, _T("200%")));		

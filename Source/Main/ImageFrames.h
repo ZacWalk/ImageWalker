@@ -559,7 +559,6 @@ public:
 
 	FrameText _text;
 	FrameHistorgram _histogram;	
-	FrameLinkCommand _flickrLink;
 	FrameEditableText _description;
 	CString _str;
 	State &_state;
@@ -568,13 +567,11 @@ public:
 		FrameGroup(pParent, _T("Image")),
 		_text(pParent),
 		_histogram(pParent),
-		_flickrLink(pParent, _T("Open in Flickr"), ID_IMAGE_OPENINFLICKR),
 		_description(pParent, this),
 		_state(state)
 	{
 		AddFrame(&_histogram);
 		AddFrame(&_text);
-		AddFrame(&_flickrLink);
 		AddFrame(&_description);
 	}
 
@@ -604,7 +601,6 @@ public:
 
 		_histogram.SetVisible(App.Options.ShowAdvancedImageDetails);
 		_text.SetVisible(App.Options.ShowAdvancedImageDetails);
-		_flickrLink.SetVisible(_state.Image.HasFlickrUrl());
 		_text.SetText(_str);
 		_description.SetText(_state.Image.GetDescription());
 	}

@@ -1007,23 +1007,6 @@ public:
 	}
 };
 
-class CommandEditSelectImagesOnFlickr : public CommandBase
-{
-public:
-	State &_state;
-	CommandEditSelectImagesOnFlickr(State &state) : _state(state) {}
-
-	void Invoke()
-	{
-		_state.Folder.SelectImagesOnFlickr();
-	}
-
-	bool IsEnabled() const 
-	{
-		return _state.Folder.HasImages(); 
-	}
-};
-
 
 
 template<class TParent>
@@ -1585,67 +1568,6 @@ public:
 		return _pParent->_state.Image.IsImageShown(); 
 	};
 
-};
-
-class CommandOpenInFlickr : public CommandBase
-{
-public:
-	State &_state;
-
-	CommandOpenInFlickr(State &state) : _state(state) {}
-
-	void Invoke()
-	{
-		_state.Flickr.OpenImage(_state.Image.GetFlickrPhotoId());
-	}
-
-	bool IsEnabled() const 
-	{
-		return _state.Image.IsImageShown() &&
-			_state.Image.HasFlickrUrl();
-	};
-};
-
-class CommandDownloadFromFlickr : public CommandBase
-{
-public:
-	State &_state;
-
-	CommandDownloadFromFlickr(State &state) : _state(state) {}
-
-	void Invoke()
-	{
-		CFlickrDownloadDlg dlg(_state);
-
-		if (IDOK == dlg.DoModal())
-		{
-			_state.Flickr.DownloadById(dlg._strId);		
-		}
-	}
-
-	bool IsEnabled() const 
-	{
-		return App.IsOnline();
-	};
-};
-
-
-class CommandUploadToFlickr : public CommandBase
-{
-public:
-	State &_state;
-
-	CommandUploadToFlickr(State &state) : _state(state) {}
-
-	void Invoke()
-	{
-		_state.Flickr.UploadImage();		
-	}
-
-	bool IsEnabled() const 
-	{
-		return _state.Image.IsImageShown();
-	};
 };
 
 template<class TParent>
@@ -2552,91 +2474,6 @@ public:
 		return _pParent->HasSelection();
 	};
 };
-
-class CommandUploadSelectedToFlickr : public CommandBase
-{
-public:
-	State &_state;
-
-	CommandUploadSelectedToFlickr(State &state) : _state(state) {}
-
-	void Invoke()
-	{
-		_state.Flickr.UploadSelectedImages();		
-	}
-
-	bool IsEnabled() const 
-	{ 
-		return _state.Folder.HasSelection();
-	};
-};
-
-class CommandChangeFlickrUser : public CommandBase
-{
-public:
-	State &_state;
-
-	CommandChangeFlickrUser(State &state) : _state(state) {}
-
-	void Invoke()
-	{
-		_state.Flickr.GetNewToken();		
-	}
-
-	bool IsEnabled() const 
-	{ 
-		return _state.Folder.HasSelection();
-	};
-};
-
-class CommandShowFlickrPicOfInterest : public CommandBase
-{
-public:
-	State &_state;
-	CommandShowFlickrPicOfInterest(State &state) : _state(state) {}
-
-	void Invoke()
-	{
-		App.Options.ShowFlickrPicOfInterest = !App.Options.ShowFlickrPicOfInterest;
-		_state.ResetFrames.Invoke();
-
-		if (App.Options.ShowFlickrPicOfInterest)
-		{
-			_state.Flickr.Next();
-		}
-	}
-
-	bool IsChecked() const { return App.Options.ShowFlickrPicOfInterest; };
-};
-
-class CommandFlickrNext : public CommandBase
-{
-public:
-	State &_state;
-	CommandFlickrNext(State &state) : _state(state) {}
-
-	void Invoke()
-	{
-		_state.Flickr.Next();
-	}
-
-	bool IsEnabled() const { return App.Options.ShowFlickrPicOfInterest; };
-};
-
-class CommandFlickrDownload : public CommandBase
-{
-public:
-	State &_state;
-	CommandFlickrDownload(State &state) : _state(state) {}
-
-	void Invoke()
-	{
-		_state.Flickr.Download();
-	}
-
-	bool IsEnabled() const { return App.Options.ShowFlickrPicOfInterest; };
-};
-
 
 
 class CommandShowTask : public CommandBase

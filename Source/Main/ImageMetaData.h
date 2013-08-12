@@ -41,7 +41,6 @@ public:
 	CString GetProvenceState() const;
 	CString GetCountryName() const;
 	CString GetOriginalTR() const;
-	CString GetFlickrId() const;
 
 	void SetTitle(const CString &str);
 	void SetTags(const CString &str);
@@ -61,5 +60,4 @@ public:
 	void SetProvenceState(const CString &str);
 	void SetCountryName(const CString &str);
 	void SetOriginalTR(const CString &str);
-	void SetFlickrId(const CString &str);
 };
