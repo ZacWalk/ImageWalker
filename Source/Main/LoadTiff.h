@@ -26,7 +26,7 @@
 
 #undef int16
 
-#include "..\Libraries\FreeImage\Source\LibTIFF\tiffiop.h"
+#include "..\Libraries\LibTIFF\tiffiop.h"
 
 class  CLoadTiff :  public CLoad<CLoadTiff>
 {

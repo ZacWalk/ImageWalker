@@ -1,6 +1,6 @@
 #pragma once
 
-#include "..\Libraries\FreeImage\Source\zlib\zlib.h"
+#include "..\Libraries\zlib\zlib.h"
 
 namespace IW
 {

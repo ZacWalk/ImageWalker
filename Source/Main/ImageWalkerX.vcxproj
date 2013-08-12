@@ -27,6 +27,7 @@
     <UseOfAtl>Static</UseOfAtl>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -35,6 +36,10 @@
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>false</CLRSupport>
     <WholeProgramOptimization>false</WholeProgramOptimization>
+    <PlatformToolset>v110_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -77,14 +82,14 @@ echo Server registration done!
     <ClCompile>
       <AdditionalOptions>/Zm200  %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)Include;$(SolutionDir)include\WTL;$(SolutionDir)Libraries\OpenJPEG\libopenjpeg;$(SolutionDir)Libraries\FreeImage\Source\ZLib;$(SolutionDir)Libraries\libexif;$(SolutionDir)Libraries\XmpToolkitSdk\public\include;$(SolutionDir)Libraries\FreeImage\Source\LibPNG;%(AdditionalIncludeDirectories);..\..\Libraries\FreeImage\Source\LibRawLite</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries;$(SolutionDir)Include;$(SolutionDir)include\WTL;$(SolutionDir)Libraries\libexif;$(SolutionDir)Libraries\ZLib;$(SolutionDir)Libraries\XmpToolkitSdk\public\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;STRICT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <BufferSecurityCheck>true</BufferSecurityCheck>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
       <FloatingPointModel>Fast</FloatingPointModel>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -102,6 +107,8 @@ echo Server registration done!
       <CompileAs>Default</CompileAs>
       <EnablePREfast>false</EnablePREfast>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -109,13 +116,12 @@ echo Server registration done!
       <AdditionalIncludeDirectories>C:\Development\WTL\include;..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>turbojpeg-static.lib;htmlhelp.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <Version>2.3.2</Version>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>$(SolutionDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <DelayLoadDLLs>Wininet.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <DelayLoadDLLs>%(DelayLoadDLLs)</DelayLoadDLLs>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(OutDir)$(ProjectName).pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
@@ -125,7 +131,8 @@ echo Server registration done!
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
-      <IgnoreSpecificDefaultLibraries>LIBCMT.lib</IgnoreSpecificDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -148,11 +155,11 @@ echo Server registration done!
       <Optimization>Full</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)Include;$(SolutionDir)include\WTL;$(SolutionDir)Libraries\OpenJPEG\libopenjpeg;$(SolutionDir)Libraries\FreeImage\Source\ZLib;$(SolutionDir)Libraries\libexif;$(SolutionDir)Libraries\XmpToolkitSdk\public\include;$(SolutionDir)Libraries\FreeImage\Source\LibPNG;%(AdditionalIncludeDirectories);..\..\Libraries\FreeImage\Source\LibRawLite</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries;$(SolutionDir)Include;$(SolutionDir)include\WTL;$(SolutionDir)Libraries\libexif;$(SolutionDir)Libraries\ZLib;$(SolutionDir)Libraries\XmpToolkitSdk\public\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_WINDOWS;STRICT;WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -174,6 +181,7 @@ echo Server registration done!
       <CallingConvention>Cdecl</CallingConvention>
       <CompileAs>Default</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -181,12 +189,13 @@ echo Server registration done!
       <AdditionalIncludeDirectories>C:\Development\WTL\include;..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>turbojpeg-static.lib;htmlhelp.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <Version>2.3.2</Version>
+      <Version>
+      </Version>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>$(SolutionDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <DelayLoadDLLs>Wininet.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <DelayLoadDLLs>%(DelayLoadDLLs)</DelayLoadDLLs>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
@@ -197,6 +206,11 @@ echo Server registration done!
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries;$(SolutionDir)Include;$(SolutionDir)include\WTL;$(SolutionDir)Libraries\libexif;$(SolutionDir)Libraries\ZLib;$(SolutionDir)Libraries\XmpToolkitSdk\public\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
@@ -224,7 +238,6 @@ echo Server registration done!
     <ClCompile Include="LoadAny.cpp" />
     <ClCompile Include="LoadBmp.cpp" />
     <ClCompile Include="LoadCompoundDoc.cpp" />
-    <ClCompile Include="LoadFreeImage.cpp" />
     <ClCompile Include="LoadJpg.cpp" />
     <ClCompile Include="LoadMetaFile.cpp" />
     <ClCompile Include="LoadPng.cpp" />
@@ -393,7 +406,6 @@ echo Server registration done!
     <ClInclude Include="LoadAny.h" />
     <ClInclude Include="LoadBmp.h" />
     <ClInclude Include="LoadCompoundDoc.h" />
-    <ClInclude Include="LoadFreeImage.h" />
     <ClInclude Include="LoadJpg.h" />
     <ClInclude Include="LoadMedia.h" />
     <ClInclude Include="LoadMetaFile.h" />
@@ -532,44 +544,32 @@ echo Server registration done!
     <ProjectReference Include="..\..\Libraries\expat\LibExpat\LibExpat.vcxproj">
       <Project>{307dfc5b-aeb0-4523-ac4d-f55506a01036}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Libraries\FreeImage\Source\FreeImageLib\FreeImageLib.2008.vcxproj">
-      <Project>{6121d045-784f-4ec1-8c3f-75ef7049fd98}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Libraries\FreeImage\Source\LibMNG\LibMNG.2008.vcxproj">
-      <Project>{24fdadba-677e-4401-86bc-c2eb18f3e6f4}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Libraries\FreeImage\Source\LibOpenJPEG\LibOpenJPEG.2008.vcxproj">
-      <Project>{9c189120-9179-4ab4-9089-d45024e84214}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Libraries\FreeImage\Source\LibPNG\LibPNG.2008.vcxproj">
-      <Project>{198d8880-abf8-4791-bc9e-b6264452b28a}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Libraries\FreeImage\Source\LibRawLite\LibRawLite.2008.vcxproj">
-      <Project>{584cc461-72e9-4eff-be11-0bae80e10872}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Libraries\FreeImage\Source\LibTIFF\LibTIFF.2008.vcxproj">
-      <Project>{33569fa4-fc78-439d-9181-0ba613cae87e}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Libraries\FreeImage\Source\OpenEXR\OpenEXR.2008.vcxproj">
-      <Project>{7f5a0e42-8929-4bce-89d5-f90c6b492599}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Libraries\FreeImage\Source\ZLib\ZLib.2008.vcxproj">
-      <Project>{e03de1fb-1bdd-43c6-a444-8c18da232bbc}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\..\Libraries\LibExif\LibExif.vcxproj">
       <Project>{2b9dd073-260f-4e6a-89d5-36fc8b3de287}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\LibJpeg\LibJpeg.vcxproj">
+      <Project>{2c15c400-4cb7-4eb7-9ec6-4c0716b26706}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\LibPNG\LibPNG.2008.vcxproj">
+      <Project>{7db10b50-ce00-4d7a-b322-6824f05d2fcb}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\Libraries\LibSQLite\LibSQLite.vcxproj">
       <Project>{06d3b3e6-e65e-4606-a634-6ba51f96af70}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\LibTIFF\LibTIFF.vcxproj">
+      <Project>{ec085cbd-e9c3-477f-9a97-cb9d5da30e27}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\Libraries\myspell\LibMySpell\LibMySpell.vcxproj">
       <Project>{02126c21-b27a-432f-b7d7-c70a7ca60808}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Libraries\XmpToolkitSdk\build\vsnet8\XMPCore.vcxproj">
+    <ProjectReference Include="..\..\Libraries\XmpToolkitSdk\XMPCore.vcxproj">
       <Project>{c5bb1536-3776-4474-861d-b5923c610fe4}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\Libraries\XmpToolkitSdk\build\vsnet8\XMPFiles.vcxproj">
+    <ProjectReference Include="..\..\Libraries\XmpToolkitSdk\XMPFiles.vcxproj">
       <Project>{b9a2e1f1-4e5c-49ac-b052-604cae21f56e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\ZLib\ZLib.vcxproj">
+      <Project>{33134f61-c1ad-4b6f-9cea-503a9f140c52}</Project>
     </ProjectReference>
     <ProjectReference Include="..\ShellExtensions\ShellExtensions.vcxproj">
       <Project>{b2800977-5bd4-4d9e-af74-52e657b3b86c}</Project>

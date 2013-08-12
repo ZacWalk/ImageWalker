@@ -19,8 +19,8 @@
 
 //extern "C" {
 #define PNG_INTERNAL
-#include "..\Libraries\FreeImage\Source\LibPNG\png.h"
-#include "..\Libraries\FreeImage\Source\LibPNG\pngpriv.h"
+#include "..\Libraries\LibPNG\png.h"
+#include "..\Libraries\LibPNG\pngpriv.h"
 //}
 
 class  CLoadPng : public CLoad<CLoadPng>

@@ -21,7 +21,6 @@
 #include "LoadWpg.h"
 #include "LoadMetaFile.h"
 #include "LoadCompoundDoc.h"
-#include "LoadFreeImage.h"
 #include "LoadAny.h"
 
 //////////////////////////////////////////////////////////////
@@ -161,9 +160,6 @@ void InitLoaderFactories(PluginState &plugins)
 
 	// Compound Media
 	//plugins.RegisterImageLoader( new ImageLoaderFactory<CLoadMedia>);
-
-	// FreeImage
-	LoadFreeImageCodecs(plugins);
 
 	
 };

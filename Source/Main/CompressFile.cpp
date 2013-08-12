@@ -13,7 +13,7 @@
 
 #include "stdafx.h"
 
-#include "..\Libraries\FreeImage\Source\zlib\zlib.h"
+#include "zlib\zlib.h"
 
 namespace IW
 {

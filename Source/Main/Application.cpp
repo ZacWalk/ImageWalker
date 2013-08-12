@@ -18,12 +18,6 @@
 #include "PropertyICC.h"
 #include "PropertyIPTC.h"
 
-#define FREEIMAGE_LIB
-#include "..\Libraries\FreeImage\Source\FreeImage.h"
-
-//#define JAS_WIN_MSVC_BUILD
-//#include "jasper\jasper.h"
-
 #define WIN_ENV
 #define TXMP_STRING_TYPE std::string
 #include "XMP.hpp"
@@ -231,7 +225,6 @@ void Application::Init()
 		
 	srand(GetTickCount());		
 
-	FreeImage_Initialise(FALSE); // Free Image
 
 	//jas_init(); // Jasper
 
@@ -260,7 +253,6 @@ void Application::Free()
 
 	SXMPMeta::Terminate();
 
-	FreeImage_DeInitialise(); // Free Image
 }
 
 bool Application::CanBeCached(UINT uExtension)
@@ -455,8 +447,8 @@ HIMAGELIST Application::GetGlobalBitmap()
 
 		DWORD dwMajor = 0;
 		DWORD dwMinor = 0;
-		HRESULT hRet = AtlGetCommCtrlVersion(&dwMajor, &dwMinor);
-		bool bhasAlpha = (SUCCEEDED(hRet) && dwMajor >= 6);
+		//HRESULT hRet = AtlGetCommCtrlVersion(&dwMajor, &dwMinor);
+		bool bhasAlpha = true; //(SUCCEEDED(hRet) && dwMajor >= 6);
 
 		if (bhasAlpha)
 		{	

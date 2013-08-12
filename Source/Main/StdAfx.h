@@ -16,6 +16,7 @@
 #define _ATL_ALL_WARNINGS
 #define _WTL_NO_CSTRING
 #define _WTL_CMDBAR_VISTA_MENUS 0
+#define _WTL_USE_VSSYM32
 
 #include <AtlStr.h>
 #include <AtlBase.h>

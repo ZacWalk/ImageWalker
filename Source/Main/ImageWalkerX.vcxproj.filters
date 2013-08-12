@@ -96,9 +96,6 @@
     <ClCompile Include="LoadCompoundDoc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LoadFreeImage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="LoadJpg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -427,9 +424,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LoadCompoundDoc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LoadFreeImage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LoadJpg.h">

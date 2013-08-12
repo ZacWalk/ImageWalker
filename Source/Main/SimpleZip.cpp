@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "Items.h"
 
-#include "..\Libraries\FreeImage\Source\zlib\zlib.h"
-#include "..\Libraries\FreeImage\Source\zlib\zutil.h"
+#include "zlib\zlib.h"
+#include "zlib\zutil.h"
 
 
 #if defined(STRICTZIP) || defined(STRICTZIPUNZIP)

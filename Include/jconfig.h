@@ -2,6 +2,7 @@
 /* see jconfig.txt for explanations */
 
 #define JPEG_LIB_VERSION 62
+#define LIBJPEG_TURBO_VERSION 1.2.1
 #define C_ARITH_CODING_SUPPORTED
 #define D_ARITH_CODING_SUPPORTED
 
@@ -32,18 +33,8 @@ typedef signed int INT32;
 #endif
 #define XMD_H                   /* prevent jmorecfg.h from redefining it */
 
-#ifndef INLINE
-#if defined(__GNUC__)
-#define INLINE __attribute__((always_inline))
-#elif defined(_MSC_VER)
-#define INLINE __forceinline
-#else
-#define INLINE
-#endif
-#endif
-
 #ifdef JPEG_INTERNALS
-
 #undef RIGHT_SHIFT_IS_UNSIGNED
+#define WITH_SIMD
 
 #endif /* JPEG_INTERNALS */

@@ -11,7 +11,8 @@
 
 #include "stdafx.h"
 
-#pragma comment(lib, "turbojpeg-static")
+#pragma comment(lib, "Wininet")
+#pragma comment(lib, "HtmlHelp")
 
 class CMainFrame;
 class State;

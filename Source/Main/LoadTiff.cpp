@@ -20,41 +20,43 @@
 // Memory Proc functions for the tiff lib
 /////////////////////////////////////////////////////////////////////
 
-/*
-tdata_t _TIFFmalloc(tsize_t s)
+extern "C"
 {
-	return ((tdata_t)IW::Alloc(s));
+
+	tdata_t _TIFFmalloc(tsize_t s)
+	{
+		return ((tdata_t)IW::Alloc(s));
+	}
+
+	void _TIFFfree(tdata_t p)
+	{
+		IW::Free(p);
+		return;
+	}
+
+	tdata_t _TIFFrealloc(tdata_t p, tsize_t s)
+	{
+		return (tdata_t)IW::ReAlloc(p, s);
+	}
+
+	void _TIFFmemset(tdata_t p, int v, tsize_t c) 
+	{
+		memset(p, v, (size_t) c);
+	}
+
+	void _TIFFmemcpy(void* d, const void* s, tmsize_t c) 
+	{
+		memcpy(d, s, (size_t) c);
+	}
+
+	int _TIFFmemcmp(const void* p1, const void* p2, tmsize_t c) 
+	{
+		return (memcmp(p1, p2, (size_t) c));
+	}
+
+
 }
 
-void _TIFFfree(tdata_t p)
-{
-	IW::Free(p);
-	return;
-}
-
-tdata_t _TIFFrealloc(tdata_t p, tsize_t s)
-{
-	return (tdata_t)IW::ReAlloc(p, s);
-}
-
-void _TIFFmemset(tdata_t p, int v, tsize_t c) 
-{
-	memset(p, v, (size_t) c);
-}
-
-void _TIFFmemcpy(tdata_t d, const tdata_t s, tsize_t c) 
-{
-	memcpy(d, s, (size_t) c);
-}
-
-int _TIFFmemcmp(const tdata_t p1, const tdata_t p2, tsize_t c) 
-{
-	return (memcmp(p1, p2, (size_t) c));
-}
-
-
-
-*/
 
 /////////////////////////////////////////////////////////////////////
 // FILE Read Proc functions for the tiff lib
@@ -218,54 +220,28 @@ static uint16 CheckPhotometric(const IW::Page pageIn, uint16 nBitsperSample)
 }
 
 
-/*
-void _TiffWarningHandlerFunc(const char* module, const char* fmt, va_list ap)
+extern "C"
 {
-	LPTSTR szTitle;
-	LPTSTR szTmp;
-	LPCTSTR szTitleText = "%s Warning";
-	LPCTSTR szDefaultModule = "TIFFLIB";
-	szTmp = (module == NULL) ? (LPTSTR)szDefaultModule : (LPTSTR)module;
-	if ((szTitle = (LPTSTR)LocalAlloc(LMEM_FIXED, (_tcsclen(szTmp) +
-	_tcsclen(szTitleText) + _tcsclen(fmt) + 128)*sizeof(TCHAR))) == NULL)
-	return;
-	_stprintf(szTitle, szTitleText, szTmp);
-	szTmp = szTitle + (_tcsclen(szTitle)+2)*sizeof(TCHAR);
-	wvsprintf(szTmp, fmt, ap);
-	//MessageBox(GetFocus(), szTmp, szTitle, MB_OK | MB_ICONINFORMATION);
-	// Trace warnings will be enough I think
-	CString str;
-	str.Format("Tiff Warning: %s\n", szTmp);
 
-	LocalFree(szTitle);
+	void _TiffWarningHandlerFunc(const char* module, const char* fmt, va_list args)
+	{
+		CStringA str;
+		str.FormatV(fmt, args);
+	}
+
+
+	void _TiffErrorHandlerFunc(const char* module, const char* fmt, va_list args)
+	{
+		CStringA str;
+		str.FormatV(fmt, args);
+	}
+
+
+
+	TIFFErrorHandler _TIFFwarningHandler = _TiffWarningHandlerFunc;
+	TIFFErrorHandler _TIFFerrorHandler = _TiffErrorHandlerFunc;
+
 }
-
-
-void _TiffErrorHandlerFunc(const char* module, const char* fmt, va_list ap)
-{
-	LPTSTR szTitle;
-	LPTSTR szTmp;
-	LPCTSTR szTitleText = "%s Error";
-	LPCTSTR szDefaultModule = "TIFFLIB";
-
-	szTmp = (module == NULL) ? (LPTSTR)szDefaultModule : (LPTSTR)module;
-	if ((szTitle = (LPTSTR)LocalAlloc(LMEM_FIXED, (_tcsclen(szTmp) +
-	_tcsclen(szTitleText) + _tcsclen(fmt) + 128)*sizeof(TCHAR))) == NULL)
-	return;
-	_stprintf(szTitle, szTitleText, szTmp);
-	szTmp = szTitle + (_tcsclen(szTitle)+2)*sizeof(TCHAR);
-	wvsprintf(szTmp, fmt, ap);
-	CString str;
-	str.Format("Tiff Error: %s\n", szTmp);
-	LocalFree(szTitle);
-}
-
-
-
-TIFFErrorHandler _TIFFwarningHandler = _TiffWarningHandlerFunc;
-TIFFErrorHandler _TIFFerrorHandler = _TiffErrorHandlerFunc;
-
-*/
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
