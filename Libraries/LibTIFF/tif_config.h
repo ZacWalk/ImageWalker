@@ -80,7 +80,7 @@ If your big endian system isn't being detected, add an OS specific check
 #endif // BYTE_ORDER
 
 #ifdef _WIN32
-#define snprintf _snprintf
+//#define snprintf _snprintf
 #endif // _WIN32
 
 /* Define to `__inline__' or `__inline' if that's what the C compiler

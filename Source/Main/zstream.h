@@ -40,7 +40,7 @@ namespace IW
 		~zistream()
 		{
 			int err = inflateEnd(&_stream);
-			if (err != Z_OK) throw IW::invalid_file();
+			//if (err != Z_OK) throw IW::invalid_file();
 		}
 
 		void Read(LPVOID lpBuf, DWORD nCount, LPDWORD pdwRead = 0)

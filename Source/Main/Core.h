@@ -1320,7 +1320,7 @@ namespace IW
 		return str;
 	}
 
-	inline CString Format(const CString &strFormat, ... )
+	inline CString Format(const CString strFormat, ... )
 	{
 		CString str;
 		va_list argList;
