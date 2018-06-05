@@ -1,6 +1,6 @@
 ImageWalker
 ===========
 
-This is a slightly cut down version of ImageWalker 2.31. Older libraries that did not build with Visual Studio 2013 were removed. The main difference is that most unusual image types are not supported.
+This is a slightly cut down version of ImageWalker 2.31. Older libraries that did not build with Visual Studio were removed. The main difference is that some unusual image types are not supported.
 
-Diffractor has been superseded ImageWalker in every way. I don't plan any new releases of ImageWalker.
+ImageWalker has been superseded by Diffractor. I don't plan any new releases of ImageWalker.
